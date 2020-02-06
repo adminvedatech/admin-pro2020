@@ -12,6 +12,7 @@ import { AuthRequestOptions } from './interceptors/auth.request';
 import { AuthService } from './auth/auth.service';
 import { LoginService } from './login/login.service';
 import { AuthGuard } from './auth/auth.guard';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,6 +26,7 @@ import { AuthGuard } from './auth/auth.guard';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule
    
   ],

@@ -55,7 +55,8 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    return !!this.getJwtToken();
+   // return !!this.getJwtToken();
+   return true;  //for testing porpouse only
   }
 
   refreshToken() {

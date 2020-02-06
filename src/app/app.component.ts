@@ -9,23 +9,22 @@ import { Route, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'app';
-  isActivate= true;
+  isActivate= false;
 
   constructor(private authService: AuthService,
               private router: Router) { 
-
-
-  if (this.authService.isLoggedIn()) {
-    console.log('IS LOGGED');
-    this.isActivate = true;
+ 
+    this.isActivate = this.authService.isLoggedIn();
+   
+    console.log('IS ACTIVATED ', this.isActivate);
+    if(!this.isActivate) {
+      console.log('GO TO LOGIN');
+      
+      this.router.navigate(['/login']);
+    }
     
-  } else {
-    console.log('NO LOGGED');
-    
-    this.isActivate = false;
-    this.router.navigate(['/login']);
-  }
-}
+  } 
 
+ 
 }
 
